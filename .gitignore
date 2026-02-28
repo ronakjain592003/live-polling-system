@@ -11,3 +11,5 @@ dist/
 backend/dist/
 frontend/dist/
 *.log
+polling-key.pem
+*.pem
