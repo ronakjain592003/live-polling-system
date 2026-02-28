@@ -32,7 +32,7 @@ const getStudentId = (): string => {
     return id;
 };
 
-const SOCKET_URL = 'http://localhost:5000';
+const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000';
 
 const App: React.FC = () => {
     const [role, setRole] = useState<Role>(() => {
@@ -112,7 +112,7 @@ const App: React.FC = () => {
             setServerRemaining(data.serverRemaining);
             setVotedOptionIndex(null);
 
-            // ✅ ADD THESE LINES
+            // ADD THESE LINES
             const savedRole = sessionStorage.getItem('role') as Role;
             if (savedRole === 'teacher') {
                 setView('teacher-live');
